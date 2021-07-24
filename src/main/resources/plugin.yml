@@ -1,0 +1,13 @@
+name: Lobbier
+version: ${project.version}
+description: Lobbier is a plugin that helps with lobby servers in a server network.
+author: regulad
+
+main: quest.ender.Lobbier.Lobbier
+depend:
+  - PlaceholderAPI
+softdepend:
+  - Matchmaker
+api-version: 1.17
+libraries:
+  - org.jetbrains:annotations:21.0.1

@@ -1,0 +1,24 @@
+version: 1 # Don't touch this! For future use.
+
+# ----------------------------------------------------------------------------
+# Lobbier Main Configuration
+# For messages, you may use PlaceholderAPI placeholders.
+# ----------------------------------------------------------------------------
+
+send_to_spawn: true # If players should be sent to the spawn point of the primary world on join.
+
+tab_list:
+  header:
+    - "&bHi!"
+  footer:
+    - "&bBye!"
+
+scoreboard:
+  title: "&bPhat Nuts"
+  content:
+    - "&bWait, what?"
+    - "&bMuscle man?"
+
+on_join:
+  - "&bWelcome!"
+
