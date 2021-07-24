@@ -38,7 +38,6 @@ public final class UpdateScoreboardTask extends BukkitRunnable {
                     scoreboardEntryComponents.add(LegacyComponentSerializer.legacyAmpersand().deserialize(PlaceholderAPI.setPlaceholders(player, lineOfText)));
 
                 final @NotNull Scoreboard targetScoreboard = this.lobbier.getServer().getScoreboardManager().getNewScoreboard(); // This shouldn't cause a memory leak... right?
-                player.setScoreboard(targetScoreboard);
 
                 final @NotNull Objective primaryObjective = targetScoreboard.registerNewObjective("primary", "dummy", titleComponent, RenderType.INTEGER);
                 primaryObjective.setDisplaySlot(DisplaySlot.SIDEBAR);
@@ -52,6 +51,8 @@ public final class UpdateScoreboardTask extends BukkitRunnable {
                     else
                         this.lobbier.getLogger().warning("Line \"" + serializedComponent + "\" is longer than the limit of 40 characters.");
                 }
+
+                player.setScoreboard(targetScoreboard); // Scoreboard is ready. Send it!
             }
         }
     }
