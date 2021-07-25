@@ -2,6 +2,7 @@ package quest.ender.Lobbier.listener;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -27,5 +28,11 @@ public final class PlayerJoinListener implements Listener {
     public final void onPlayerJoinForOnJoinMessage(final @NotNull PlayerJoinEvent playerJoinEvent) {
         for (final @NotNull String lineOfMessage : this.lobbier.getConfig().getStringList("messages.on_join"))
             playerJoinEvent.getPlayer().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(PlaceholderAPI.setPlaceholders(playerJoinEvent.getPlayer(), lineOfMessage)));
+    }
+
+    @EventHandler
+    public final void onPlayerJoinForCorrectGameMode(final @NotNull PlayerJoinEvent playerJoinEvent) {
+        if (this.lobbier.getConfig().getBoolean("correct_gamemode"))
+            playerJoinEvent.getPlayer().setGameMode(this.lobbier.getServer().getDefaultGameMode());
     }
 }

@@ -6,6 +6,7 @@ version: 1 # Don't touch this! For future use.
 # ----------------------------------------------------------------------------
 
 send_to_spawn: true # If players should be sent to the spawn point of the primary world on join.
+correct_gamemode: true # If players should have their gamemode set to the default on world join.
 
 tab_list:
   header:
