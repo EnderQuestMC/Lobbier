@@ -1,5 +1,6 @@
 package quest.ender.Lobbier;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import quest.ender.Lobbier.listener.PlayerJoinListener;
@@ -9,6 +10,7 @@ import quest.ender.Lobbier.tasks.UpdateTablistTask;
 public final class Lobbier extends JavaPlugin {
     private final @NotNull UpdateScoreboardTask updateScoreboardTask = new UpdateScoreboardTask(this);
     private final @NotNull UpdateTablistTask updateTablistTask = new UpdateTablistTask(this);
+    private final @NotNull Metrics metrics = new Metrics(this, 12227);
 
     @Override
     public final void onEnable() {
