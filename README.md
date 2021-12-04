@@ -16,8 +16,9 @@ For the repository:
 <repositories>
     ...
     <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
+        <id>github</id>
+        <name>GitHub Packages</name>
+        <url>https://maven.pkg.github.com/EnderQuestMC/Lobbier</url>
     </repository>
     ...
 </repositories>
@@ -30,7 +31,7 @@ For the dependency:
     ...
     <dependency>
         <groupId>quest.ender</groupId>
-        <artifactId>Lobbier</artifactId>
+        <artifactId>lobbier</artifactId>
         <version>{version}</version>
     </dependency>
     ...
